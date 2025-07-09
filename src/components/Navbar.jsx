@@ -3,8 +3,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
+  { name: 'Add Journal', href: '#', current: false },
   { name: 'Calendar', href: '#', current: false },
 ]
 
@@ -30,7 +29,7 @@ export default function Example() {
             <div className="flex shrink-0 items-center">
               <img
                 alt="Your Company"
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+                src="public\android-chrome-192x192.png"
                 className="h-8 w-auto"
               />
             </div>
@@ -70,7 +69,7 @@ export default function Example() {
                   <span className="sr-only">Open user menu</span>
                   <img
                     alt=""
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    src="public\image.png"
                     className="size-8 rounded-full"
                   />
                 </MenuButton>
