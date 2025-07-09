@@ -1,25 +1,15 @@
 import Navbar from "./Navbar";
-
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function Main() {
-  const [journals, setJournals] = useState([
+  const [journals] = useState([
     { title: "Personal", subtitle: "myJournal_03" },
     { title: "Work", subtitle: "myJournal_02" },
     { title: "Ideas", subtitle: "myJournal_01" },
     { title: "Dreams", subtitle: "myJournal_00" },
   ]);
-  const handleNewJournal = () => {
-    const title = prompt("Enter journal title:");
-    const subtitle = prompt("Enter journal subtitle:");
-
-    if (!title || !subtitle) return;
-
-    const newJournal = { title, subtitle };
-
-    setJournals([newJournal, ...journals]);
-  };
-
+    const navigate = useNavigate();
   return (
     <>
       <Navbar />
@@ -46,20 +36,20 @@ export default function Main() {
         </header>
         <main>
           <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <h1 className="text-2xl font-bold mb-6">My Journals</h1>
-
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {/* + New Journal Card */}
               <div
-                onClick={handleNewJournal}
+                onClick={() => navigate("/add-journal")}
                 className="flex flex-col items-center justify-center h-40 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:shadow-[0_0_10px_4px_#4040a1] transition"
               >
                 <div className="text-4xl font-bold">+</div>
                 <p className="text-sm mt-2">New Journal</p>
               </div>
-
               {/* Template Card */}
-              <div className="h-40 p-4 rounded-lg shadow bg-white hover:shadow-[0_0_10px_4px_#4040a1] transition">
+              <div
+                onClick={() => navigate("/add-journal")}
+                className="h-40 p-4 rounded-lg shadow bg-white cursor-pointer hover:shadow-[0_0_10px_4px_#4040a1] transition"
+              >
                 <p className="text-lg font-semibold">Template</p>
               </div>
 
